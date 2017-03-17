@@ -27,12 +27,6 @@
                 templateUrl: "views/contact.html",
                 controller: "controller.contact",
                 controllerAs: "vm"
-            })
-            .state('download', {
-                url: '/download',
-                templateUrl: "views/download.html",
-                controller: "controller.download",
-                controllerAs: "vm"
             });
 
 
