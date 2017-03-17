@@ -1,3 +1,12 @@
+node_modules
+bower_components
+cfg.json
+debug.log
+_site/
+npm-debug.log
+.DS_Store
+dev
+
 # Logs
 logs
 *.log

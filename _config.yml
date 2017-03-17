@@ -1,0 +1,26 @@
+author: malekbenz
+description: Idrissdidac.com
+url: https://drissdidac.com
+title: drissdidac.com
+contents: /dist 
+# Github repositoriesname: Malekbenz, weblog
+#
+# Github repositories
+github_user: malekbenzemam
+github_repo_url: https://github.com/malekbenzemam
+
+# Jekyll Settings
+#
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
+
+paginate_path: "page/:num"
+category_dir: categories
+# Disqus Comments
+disqus_short_name: drissdidac.com
+disqus_show_comment_count: true
+#
+gems: [jekyll-paginate, jekyll-redirect-from]
+paginate: 1
+exclude: ["README.md","gulpfile.js", "src", "debug.log",node_modules, package.json, npm-debug.log, gulp.js,  bower_components]
+
