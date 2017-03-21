@@ -14,7 +14,7 @@
 	<title>IdrissDidac.com</title>
 
 	<!-- Bootstrap Core CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="dist/css/bootstrap.min.css" rel="stylesheet">
 	<!--<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">-->
 
 	<!-- Google Web Fonts -->
@@ -26,10 +26,10 @@
 
 	<!-- CSS Files -->
 	<!--<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">-->
-	<link href="css/font-awesome.min.css" rel="stylesheet">
-	<link href="css/owl.carousel.css" rel="stylesheet">
-	<link href="css/style.min.css" rel="stylesheet">
-	<!--<link href="css/responsive.css" rel="stylesheet">-->
+	<link href="dist/css/font-awesome.min.css" rel="stylesheet">
+	<link href="dist/css/owl.carousel.css" rel="stylesheet">
+	<link href="dist/css/style.min.css" rel="stylesheet">
+	<!--<link href="dist/css/responsive.css" rel="stylesheet">-->
 
 	<!--[if lt IE 9]>
 		<script src="js/ie8-responsive-file-warning.js"></script>
@@ -43,11 +43,11 @@
     <![endif]-->
 
 	<!-- Fav and touch icons -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/fav-144.png">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/fav-114.png">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/fav-72.png">
-	<link rel="apple-touch-icon-precomposed" href="images/fav-57.png">
-	<link rel="shortcut icon" href="images/fav.png">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="dist/images/fav-144.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="dist/images/fav-114.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="dist/images/fav-72.png">
+	<link rel="apple-touch-icon-precomposed" href="dist/images/fav-57.png">
+	<link rel="shortcut icon" href="dist/images/fav.png">
 
 </head>
 
@@ -61,26 +61,25 @@
 					<!-- Logo Starts -->
 					<div class="hidden-xs col-sm-4 col-md-3">
 						<div id="logo">
-							<a href="index.html"><img width="300" src="images/logo-idriss.png" title="IdrissDidac.com" alt="IdrissDidac.com" class="img-responsive"
+							<a href="index.html"><img width="300" src="dist/images/logo-idriss.png" title="IdrissDidac.com" alt="IdrissDidac.com" class="img-responsive"
 								/></a>
 						</div>
 					</div>
 					<!-- Logo Starts -->
 					<div class="col-sm-8 col-md-5 text-center">
-						<h3 ><strong>EURL IDRISS EL KHARATI IMPORT EXPORT</strong> </h3>
-						<h2 style="color: darkblue"  ><strong>IDISS-DIDAC</strong> </h2>
+						<h3><strong>EURL IDRISS EL KHARATI IMPORT EXPORT</strong> </h3>
+						<h2 style="color: darkblue"><strong>IDISS-DIDAC</strong> </h2>
 						<h5>DISTRIBUTEUR DE MATERIEL DIDACTIQUES ET SCIENTIFIQUES</h5>
 					</div>
 					<div class="col-md-3 hidden-sm hidden-xs">
 						<div class="text-right">
 							<h5 style="color:red">
-								<i class="fa fa-mobile" aria-hidden="true"></i> 
-								+(213) 550 667 524 – 791 834 243
+								<i class="fa fa-mobile" aria-hidden="true"></i> +(213) 550 667 524 – 791 834 243
 							</h5>
 							<div>
 								ADRESSE : CITE KAABOUB SETIF
 							</div>
-							<h4 >info@idrissdidac.com </h4>
+							<h4>info@idrissdidac.com </h4>
 						</div>
 					</div>
 
@@ -127,26 +126,11 @@
 								<li><a tabindex="-1" href="#">Home Theater</a></li>
 							</ul>
 						</li>
-						<li><a href="category-list.html">Computers </a></li>
-						<li class="dropdown">
-							<a href="category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
-						Pages
-					</a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a tabindex="-1" href="index.html">Home</a></li>
-								<li><a tabindex="-1" href="about.html">About</a></li>
-								<li><a tabindex="-1" href="category-list.html">Category List</a></li>
-								<li><a tabindex="-1" href="category-grid.html">Category Grid</a></li>
-								<li><a tabindex="-1" href="product.html">Product</a></li>
-								<li><a tabindex="-1" href="product-full.html">Product Full Width</a></li>
-								<li><a tabindex="-1" href="cart.html">Cart</a></li>
-								<li><a tabindex="-1" href="login.html">Login</a></li>
-								<li><a tabindex="-1" href="compare.html">Compare Products</a></li>
-								<li><a tabindex="-1" href="typography.html">Typography</a></li>
-								<li><a tabindex="-1" href="register.html">Register</a></li>
-								<li><a tabindex="-1" href="contact.html">Contact</a></li>
-								<li><a tabindex="-1" href="404.html">404</a></li>
-							</ul>
+						<li>
+							<a ui-sref="contact">Contact </a>
+						</li>
+						<li>
+							<a ui-sref="about">A Propos </a>
 						</li>
 					</ul>
 				</div>
@@ -168,13 +152,13 @@
 
 					<ul class="aboutul">
 						<li class="aboutli" ng-repeat="category in vm.categories ">
-							<a href="category-grid.html" class="list-group-item">
+							<a ui-sref="categories({ categorie: '{{category.name}}', subCategorie:'' })" class="list-group-item">
 								<i class="fa fa-chevron-right"></i> {{category.name}} {{category.children.length? "("+category.children.length+")":
 								""}}
 							</a>
 							<ul class="leftul">
 								<li ng-repeat="subCategory in category.children">
-									<a href="category-grid.html" class="list-group-item">
+									<a ui-sref="categories({ categorie: '{{category.name}}', subCategorie:'{{subCategory.name}}' })" class="list-group-item">
 										<i class="fa fa-angle-down"></i> {{subCategory.name}}
 									</a>
 								</li>
@@ -189,7 +173,7 @@
 				<ul class="hidden-sm hidden-xs side-products-list">
 					<!-- Special Product #1 Starts -->
 					<li class="clearfix">
-						<img src="images/special-product/spl-product-img1.jpg" alt="Special product" class="img-responsive" />
+						<img src="dist/images/special-product/spl-product-img1.jpg" alt="Special product" class="img-responsive" />
 						<h5><a href="#">Olympus Digital Camera</a></h5>
 						<!--<div class="price">
 							<span class="price-new">$199.50</span>
@@ -198,7 +182,7 @@
 					<!-- Special Product #1 Ends -->
 					<!-- Special Product #2 Starts -->
 					<li class="clearfix">
-						<img src="images/special-product/spl-product-img2.jpg" alt="Special product" class="img-responsive" />
+						<img src="dist/images/special-product/spl-product-img2.jpg" alt="Special product" class="img-responsive" />
 						<h5><a href="#">Olympus Digital Camera</a></h5>
 						<!--<div class="price">
 							<span class="price-new">$599.50</span>
@@ -207,7 +191,7 @@
 					<!-- Special Product #2 Ends -->
 					<!-- Special Product #3 Starts -->
 					<li class="clearfix">
-						<img src="images/special-product/spl-product-img3.jpg" alt="Special product" class="img-responsive" />
+						<img src="dist/images/special-product/spl-product-img3.jpg" alt="Special product" class="img-responsive" />
 						<h5><a href="#">Olympus Digital Camera</a></h5>
 						<!--<div class="price">
 							<span class="price-new">$199.50</span>
@@ -216,7 +200,7 @@
 					<!-- Special Product #3 Ends -->
 					<!-- Special Product #4 Starts -->
 					<li class="clearfix">
-						<img src="images/special-product/spl-product-img1.jpg" alt="Special product" class="img-responsive" />
+						<img src="dist/images/special-product/spl-product-img1.jpg" alt="Special product" class="img-responsive" />
 						<h5><a href="#">Olympus Digital Camera</a></h5>
 						<!--<div class="price">
 							<span class="price-new">$199.50</span>
@@ -225,7 +209,7 @@
 					<!-- Special Product #4 Ends -->
 					<!-- Special Product #5 Starts -->
 					<li class="clearfix">
-						<img src="images/special-product/spl-product-img2.jpg" alt="Special product" class="img-responsive" />
+						<img src="dist/images/special-product/spl-product-img2.jpg" alt="Special product" class="img-responsive" />
 						<h5><a href="#">Olympus Digital Camera</a></h5>
 						<!--<div class="price">
 							<span class="price-new">$599.50</span>
@@ -235,7 +219,7 @@
 				</ul>
 				<!-- Special Products Ends -->
 				<!-- Banner #1 Starts -->
-				<img  src="images/banners/side-banner2.jpg" alt="Side Banner" class="img-responsive hidden-sm hidden-xs " />
+				<img src="dist/images/banners/side-banner2.jpg" alt="Side Banner" class="img-responsive hidden-sm hidden-xs " />
 				<br>
 				<!-- Banner #1 Ends -->
 			</div>
@@ -258,7 +242,10 @@
 				<div class="col-md-2 col-sm-6">
 					<h5>Information</h5>
 					<ul>
-						<li><a href="about.html">A Propos</a></li>
+
+						<li>
+							<a ui-sref="about">A Propos </a>
+						</li>
 					</ul>
 				</div>
 				<!-- Information Links Ends -->
@@ -302,21 +289,21 @@
 	</footer>
 	<!-- Footer Section Ends -->
 
-	<script src="js/jquery-1.11.1.min.js"></script>
-	<script src="js/jquery-migrate-1.2.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/bootstrap-hover-dropdown.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/custom.js"></script>
-	<script src="js/angular.min.js"></script>
+	<script src="dist/js/jquery-1.11.1.min.js"></script>
+	<script src="dist/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="dist/js/bootstrap.min.js"></script>
+	<script src="dist/js/bootstrap-hover-dropdown.min.js"></script>
+	<script src="dist/js/jquery.magnific-popup.min.js"></script>
+	<script src="dist/js/owl.carousel.min.js"></script>
+	<script src="dist/js/custom.js"></script>
+	<script src="dist/js/angular.min.js"></script>
 
 	<!--<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>-->
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script>
 
-	<script src="js/app.min.js"></script>
+	<script src="dist/js/app.min.js"></script>
 
 	<script type="text/javascript">
 		$(function () {

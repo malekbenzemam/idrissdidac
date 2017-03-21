@@ -12,10 +12,10 @@
         function init() {
             self.contents = config.DIST;
             self.categoryTitle = "Categories";
-            dataservice.getSideBarbis().then(function(data){
-            console.log("from controller", data);
-                self.categories = data;
-            });
+            dataservice.getSideBar()
+                .then(function (data) {
+                    self.categories = data;
+                });
             // self.categories = dataservice.getSideBar();
 
         }

@@ -10,8 +10,7 @@
         return {
             getSlides: getSlides,
             getDocuments: getDocuments,
-            getSideBar: getSideBar,
-            getSideBarbis: getSideBarbis
+            getSideBar: getSideBar
         };
 
         function dirTree(categories) {
@@ -39,7 +38,7 @@
         }
 
 
-        function getSideBarbis() {
+        function getSideBar() {
             return $http.get(config.DATA)
                 .then(function (response) {
                     console.log(response);
@@ -48,45 +47,6 @@
                 });
         }
 
-        function getSideBar() {
-            return [{
-                name: "Cartes Géographiques",
-                subCategories: [{
-                    name: "My First Card"
-                }, {
-                    name: "Second Card"
-                }, {
-                    name: "Third Card"
-                }, {
-                    name: "Forth Card"
-                }
-                ]
-            },
-            {
-                name: "Cartes Géographiques vièrge",
-                subCategories: [{
-                    name: "First Card"
-                }, {
-                    name: "Second Card"
-                }, {
-                    name: "Third Card"
-                }, {
-                    name: "Forth Card"
-                }]
-            },
-            {
-                name: "Planches Educatives",
-                subCategories: [{
-                    name: "Planches Educatives Card"
-                }, {
-                    name: "Planches Educatives Second Card"
-                }, {
-                    name: "Planches Educatives Third Card"
-                }, {
-                    name: "Planches Educatives Forth Card"
-                }]
-            }]
-        }
 
         function getSlides() {
             return $http.get(config.SLIDES)

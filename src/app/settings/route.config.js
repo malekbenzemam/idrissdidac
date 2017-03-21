@@ -12,19 +12,25 @@
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: "views/main.html",
+                templateUrl: "dist/views/main.html",
                 controller: "controller.main",
+                controllerAs: "vm"
+            })
+            .state('categories', {
+                url: '/categories/:categorie/:subCategorie',
+                templateUrl: "dist/views/categories.html",
+                controller: "controller.categories",
                 controllerAs: "vm"
             })
             .state('about', {
                 url: '/about',
-                templateUrl: "views/about.html",
+                templateUrl: "dist/views/about.html",
                 controller: "controller.about",
                 controllerAs: "vm"
             })
             .state('contact', {
                 url: '/contact',
-                templateUrl: "views/contact.html",
+                templateUrl: "dist/views/contact.html",
                 controller: "controller.contact",
                 controllerAs: "vm"
             });
