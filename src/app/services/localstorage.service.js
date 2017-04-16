@@ -2,22 +2,31 @@
 (function (app) {
     'use strict';
 
-    
+
     app.factory('storage', storage)
 
-    storage.$inject = ['$localStorage'];
+    storage.$inject = ['$localStorage', '$q'];
 
-    function storage($localStorage) {
+    function storage($localStorage, $q) {
         return {
-            getSlides: getSlides,
+            getData: getData,
+            saveData: saveData
         }
 
-        function getSlides(url) {
-            return $localStorage[url];
+        function getData() {
+            var deferred = $q.defer();
+            var data = $localStorage["idrissdata"];
+            if(!data){
+                return null;
+            } 
+
+            deferred.resolve(data);
+            return deferred.promise;
+
         }
 
-        function saveSlides(url, books) {
-            $localStorage[url] = books;
+        function saveData(data) {
+            $localStorage["idrissdata"] = data;
         }
 
 

@@ -15,8 +15,9 @@
             dataservice.getSideBar()
                 .then(function (data) {
                     self.categories = data;
+                    // console.log("Categories", data);
                 });
-            // self.categories = dataservice.getSideBar();
+            
 
         }
 

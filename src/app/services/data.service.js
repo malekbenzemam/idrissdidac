@@ -10,7 +10,8 @@
         return {
             getSlides: getSlides,
             getDocuments: getDocuments,
-            getSideBar: getSideBar
+            getSideBar: getSideBar,
+            getData: getData
         };
 
         function dirTree(categories) {
@@ -21,6 +22,7 @@
                 var info = {
                     path: categories.path,
                     name: categories.name,
+                    id: categories.id,
                     type: categories.type
                 };
 
@@ -37,12 +39,31 @@
 
         }
 
+        function getData(){
+            return getAllData();
+        }
+        function getAllData() {
+            var data = storage.getData();
+            
+            if (data) {
+                console.log('Data from cache');
+                return data;
+            }
 
-        function getSideBar() {
             return $http.get(config.DATA)
                 .then(function (response) {
-                    console.log(response);
-                    data = dirTree(response.data);
+                    console.log("Data from server  ");
+                    storage.saveData(response.data);
+                    return response.data;
+                });
+
+        }
+
+        function getSideBar() {
+            return getAllData()
+                .then(function (response) {
+                    data = dirTree(response);
+                    // console.log(data.children);
                     return data.children;
                 });
         }

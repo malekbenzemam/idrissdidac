@@ -152,7 +152,7 @@
 
 					<ul class="aboutul">
 						<li class="aboutli" ng-repeat="category in vm.categories ">
-							<a ui-sref="categories({ categorie: '{{category.name}}', subCategorie:'' })" class="list-group-item">
+							<a ui-sref="categories({ id : '{{category.id}}', categorie: '{{category.name}}', subCategorie:'' })" class="list-group-item">
 								<i class="fa fa-chevron-right"></i> {{category.name}} {{category.children.length? "("+category.children.length+")":
 								""}}
 							</a>
