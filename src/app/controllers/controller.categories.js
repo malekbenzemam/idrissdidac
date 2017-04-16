@@ -22,12 +22,12 @@
                     angular.forEach(data, function (element) {
                         if (element.name === self.categorie) {
                             if (!self.subCategorie) {
-                                this.images = element;
+                                this.images = element.children;
                             }
                             else {
                                 angular.forEach(element.children, function (element) {
                                     if (element.name === self.subCategorie) {
-                                        this.images = element;
+                                        this.images = element.children;
                                     }
 
                                 }, self)
