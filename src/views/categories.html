@@ -1,24 +1,22 @@
 <div class="row">
-    <h2>{{vm.categorie}} </h2>
-    <h3>{{vm.subCategorie}} </h3>
     <div class="text-center">
+        <h2>{{vm.categorie}} </h2>
+        <h3>{{vm.subCategorie}} </h3>
         <button class="btn btn-success" ng-click="vm.products.prior()">Précedent</button>
         <h3 style="display: inline"> {{vm.products.page}} / {{vm.products.totalPage()}}</h3>
         <button class="btn btn-success" ng-click="vm.products.next()">Suivant</button>
     </div>
     <hr>
-    <!--<ul>
-        <li ng-repeat="image in vm.products.products">{{$index}} -> {{image.path }}</li>
-    </ul>-->
     <div class="col2-banners">
         <div class="row">
-            <div class="col-sm-4" ng-repeat="image in vm.products.products">
-                
-                <img style="padding: 3%; height: 300px; width:100%" ng-src="{{image.path }}" alt="banners" class="img-responsive">
+            <div class="col-sm-4" ng-repeat="product in vm.products.products">
+                <a ui-sref="products({ id : '{{category.id}}', categorie: '{{vm.categorie}}', subCategorie:'{{vm.subCategorie || 0}}' ,  product:'{{product.name}}'})">
+                    <img style="padding: 3%; height: 300px; width:100%" ng-src="{{product.path }}" alt="banners" class="img-responsive">
+                </a>
             </div>
-        </ul>
+            </ul>
+        </div>
+
     </div>
 
-</div>
-
-<!-- /.container -->
+    <!-- /.container -->

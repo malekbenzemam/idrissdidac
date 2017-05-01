@@ -11,7 +11,9 @@
             getSlides: getSlides,
             getDocuments: getDocuments,
             getSideBar: getSideBar,
-            getData: getData
+            getData: getData,
+            getProducts: getProducts,
+            getProduct: getProduct
         };
 
         function dirTree(categories) {
@@ -39,12 +41,12 @@
 
         }
 
-        function getData(){
+        function getData() {
             return getAllData();
         }
         function getAllData() {
             var data = storage.getData();
-            
+
             if (data) {
                 console.log('Data from cache');
                 return data;
@@ -59,6 +61,44 @@
 
         }
 
+        function getProducts(category, subCategory, fn) {
+            if (subCategory == 0) {
+                var subCategory = "";
+            }
+            console.log("sub ", subCategory);
+            getData()
+                .then(function (data) {
+                    angular.forEach(data.children, function (element) {
+                        if (element.name === category) {
+                            if (!subCategory) {
+                                return fn(element.children);
+                            }
+
+                            angular.forEach(element.children, function (element) {
+                                if (element.name === subCategory) {
+                                    return fn(element.children);
+                                }
+
+                            })
+
+                        }
+                    });
+
+                });
+
+        }
+
+        function getProduct(category, subCategory, productId, fn) {
+            getProducts(category, subCategory, function (prods) {
+                prod = prods.filter(function (prod, index) {
+                    return prod.name == productId;
+                })[0];
+
+                prod.path = prod.path.replace('/categories/', '/projects/')
+                fn(prods, prod.id);
+
+            });
+        }
         function getSideBar() {
             return getAllData()
                 .then(function (response) {

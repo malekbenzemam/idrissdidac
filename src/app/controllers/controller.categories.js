@@ -18,11 +18,12 @@
                 to = to < this.total() ? to : this.total();
                 this.products = this.all.slice(from, to);
                 this.page = thePage;
+                console.log("Products", self.products);
             },
             next: function () {
 
                 var next = (this.page + 1) % (this.totalPage() + 1);
-                console.log("next : " , next)
+                console.log("next : ", next)
                 next = next || 1;
                 this.gotoPage(next);
             },
@@ -41,34 +42,21 @@
 
         };
 
-        init();
 
         self.categorie = $stateParams.categorie;
         self.subCategorie = $stateParams.subCategorie;
         console.log("Category selected ", $stateParams)
         self.contents = config.DIST;
 
+        init();
+
+
         function init() {
-            dataservice.getData()
-                .then(function (data) {
-                    var data = data.children;
-                    angular.forEach(data, function (element) {
-                        if (element.name === self.categorie) {
-                            if (!self.subCategorie) {
-                                this.products.all = element.children;
-                            }
-                            else {
-                                angular.forEach(element.children, function (element) {
-                                    if (element.name === self.subCategorie) {
-                                        this.products.all = element.children;
-                                    }
-                                    
-                                }, self)
-                            }
-                        }
-                    }, self);
+            dataservice.getProducts(self.categorie, self.subCategorie,
+                function (data) {
+                    console.log("Products from getproduct ", self.products);
+                    self.products.all = data;
                     self.products.gotoPage(1);
-                    console.log("Products", self.products);
                 });
 
         }

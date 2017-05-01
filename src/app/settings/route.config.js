@@ -33,6 +33,12 @@
                 templateUrl: "dist/views/contact.html",
                 controller: "controller.contact",
                 controllerAs: "vm"
+            })
+            .state('products', {
+                url: '/products/:categorie/:subCategorie/:product',
+                templateUrl: "dist/views/products.html",
+                controller: "controller.products",
+                controllerAs: "vm"
             });
 
 

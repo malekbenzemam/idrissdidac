@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="text-center">
+        <h2>{{vm.categorie}} </h2>
+        <h3>{{vm.subCategorie}} </h3>
+
+        <button class="btn btn-success" ng-click="vm.products.prior()">Précedent</button>
+        <h3 style="display: inline"> {{vm.products.current()}} / {{vm.products.total()}}</h3>
+        <button class="btn btn-success" ng-click="vm.products.next()">Suivant</button>
+    </div>
+    <hr>
+    <!--<ul>
+        <li ng-repeat="image in vm.products.products">{{$index}} -> {{image.path }}</li>
+    </ul>-->
+    <div class="col2-banners">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <img style="padding: 5%; width:100%" ng-src="{{ vm.products.product.path }}" alt="banners" class="img-responsive">
+            </div>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- /.container -->
