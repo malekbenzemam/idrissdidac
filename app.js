@@ -1,13 +1,14 @@
 var dirToJson = require('./lib/dirToJson.js');
 
 var file = 'dist/data.json';
-var srcDirectory = "Dist/images/products/categories";
+// Source directory
+var srcDirectory = "dist/images/products/categories";
 
 
 // if (module.parent == undefined) {
 //     // node dirTree.js ~/foo/bar
 //     var util = require('util');
-//     var jsonObj = util.inspect(dirTree("Dist/images/Images Publicite"), false, null);
+//     var jsonObj = util.inspect(dirTree("dist/images/Images Publicite"), false, null);
 // }
 
 

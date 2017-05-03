@@ -12,7 +12,7 @@
             },
             
             DATA: "/dist/api/data.json",
-            DOCUMENTS: "/dist//api/documents.json",
+            DOCUMENTS: "/dist/api/documents.json",
             SLIDES: "/dist/api/slides.json"
         });
 
