@@ -93,7 +93,7 @@
                 prod = prods.filter(function (prod, index) {
                     return prod.name == productId;
                 })[0];
-
+                
                 prod.path = prod.path.replace('/categories/', '/projects/')
                 fn(prods, prod.id);
 
