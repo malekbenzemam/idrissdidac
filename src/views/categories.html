@@ -10,7 +10,7 @@
     <div class="col2-banners">
         <div class="row">
             <div class="col-sm-4" ng-repeat="product in vm.products.products">
-                <a ui-sref="products({ id : '{{category.id}}', categorie: '{{vm.categorie}}', subCategorie:'{{vm.subCategorie || 0}}' ,  product:'{{product.name}}'})">
+                <a ui-sref="products({ id : '{{category.id}}', categorie: '{{vm.categorie}}', subCategorie:'{{vm.subCategorie || 0}}' ,  product:'{{product.urlname}}'})">
                     <img style="padding: 3%; height: 300px; width:100%" ng-src="{{product.path }}" alt="banners" class="img-responsive">
                 </a>
             </div>

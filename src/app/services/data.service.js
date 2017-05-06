@@ -96,7 +96,7 @@
         function getProduct(category, subCategory, productId, fn) {
             getProducts(category, subCategory, function (prods) {
                 prod = prods.children.filter(function (prod, index) {
-                    return prod.name == productId;
+                    return prod.urlname == productId;
                 })[0];
 
                 console.log('prod : ', prod.path);
