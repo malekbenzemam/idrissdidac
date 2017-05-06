@@ -54,8 +54,10 @@
         function init() {
             dataservice.getProducts(self.categorie, self.subCategorie,
                 function (data) {
-                    console.log("Products from getproduct ", self.products);
-                    self.products.all = data;
+                    self.categorieTitle = data.categorie;
+                    self.subCategorieTitle = data.subCategorie;
+                    console.log("Products from getproduct ", data);
+                    self.products.all = data.children;
                     self.products.gotoPage(1);
                 });
 

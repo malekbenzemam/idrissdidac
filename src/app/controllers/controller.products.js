@@ -14,6 +14,7 @@
             product: {},
             gotoPage: function (index) {
                 this.page = index;
+                console.log(" all : ", this.all);
                 this.product = this.all[this.page];
                 this.product.path = this.product.path.replace('/categories/', '/projects/')
             },
@@ -22,7 +23,7 @@
                 this.gotoPage(next);
             },
             prior: function () {
-                var next = this.page ?  this.page - 1: this.all.length - 1; 
+                var next = this.page ? this.page - 1 : this.all.length - 1;
                 this.gotoPage(next);
             },
             total: function () {
@@ -48,9 +49,13 @@
         init();
         function init() {
             dataservice.getProduct(self.categorie, self.subCategorie, self.productId, function (products, index) {
-                self.products.all = products;
+                self.categorieTitle = products.categorie;
+                self.subCategorieTitle = products.subCategorie;
+
+                self.products.all = products.children;
                 self.products.gotoPage(index - 1);
-                console.log('Product found ', self.products.product)
+                console.log('Product found ', products);
+
             })
         }
     };

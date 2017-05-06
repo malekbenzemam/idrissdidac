@@ -22,8 +22,10 @@
 
 
                 var info = {
-                    path: categories.path,
+                    // path: categories.path,
                     name: categories.name,
+                    urlname: categories.urlname,
+                    discription: categories.discription,
                     id: categories.id,
                     type: categories.type
                 };
@@ -61,22 +63,25 @@
 
         }
 
-        function getProducts(category, subCategory, fn) {
-            if (subCategory == 0) {
-                var subCategory = "";
+        function getProducts(categoryName, subCategoryName, fn) {
+            if (subCategoryName == 0) {
+                var subCategoryName = "";
             }
-            console.log("sub ", subCategory);
+            console.log("sub ", subCategoryName);
             getData()
                 .then(function (data) {
-                    angular.forEach(data.children, function (element) {
-                        if (element.name === category) {
-                            if (!subCategory) {
-                                return fn(element.children);
+                    angular.forEach(data.children, function (category) {
+                        if (category.urlname === categoryName) {
+                            if (!subCategoryName) {
+                                category.categorie = category.name;
+                                return fn(category);
                             }
-
-                            angular.forEach(element.children, function (element) {
-                                if (element.name === subCategory) {
-                                    return fn(element.children);
+                            console.log("Subcategorie searche ");
+                            angular.forEach(category.children, function (subCategory) {
+                                if (subCategory.urlname === subCategoryName) {
+                                    subCategory.categorie = category.name;
+                                    subCategory.subCategorie = subCategory.name;
+                                    return fn(subCategory);
                                 }
 
                             })
@@ -90,11 +95,13 @@
 
         function getProduct(category, subCategory, productId, fn) {
             getProducts(category, subCategory, function (prods) {
-                prod = prods.filter(function (prod, index) {
+                prod = prods.children.filter(function (prod, index) {
                     return prod.name == productId;
                 })[0];
-                
+
+                console.log('prod : ', prod.path);
                 prod.path = prod.path.replace('/categories/', '/projects/')
+                console.log('prod : ', prod.path);
                 fn(prods, prod.id);
 
             });
