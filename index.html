@@ -152,7 +152,11 @@
 
 					<ul class="aboutul">
 						<li class="aboutli" ng-repeat="category in vm.categories ">
-							<a ui-sref="categories({ id : '{{category.id}}', categorie: '{{category.urlname}}', subCategorie:'' })" class="list-group-item">
+							<a ng-if="!category.children.length"  ui-sref="categories({ id : '{{category.id}}', categorie: '{{category.urlname}}', subCategorie:'' })" class="list-group-item">
+								<i class="fa fa-chevron-right"></i> {{category.name}} {{category.children.length? "("+category.children.length+")":
+								""}}
+							</a>
+							<a  ng-if="category.children.length" class="list-group-item">
 								<i class="fa fa-chevron-right"></i> {{category.name}} {{category.children.length? "("+category.children.length+")":
 								""}}
 							</a>
@@ -173,7 +177,10 @@
 				<ul class="hidden-sm hidden-xs side-products-list">
 					<!-- Special Product #1 Starts -->
 					<li class="clearfix">
-						<img src="dist/images/special-product/spl-product-img1.jpg" alt="Special product" class="img-responsive" />
+						<a href="#/categories/CARTES_GEOGRAPHIQUES/">
+							<img src="dist/images/special-product/spl-product-img1.jpg" alt="Special product" class="img-responsive" />
+
+						</a>
 						<!--<h5><a href="#">Olympus Digital Camera</a></h5>-->
 						<!--<div class="price">
 							<span class="price-new">$199.50</span>
@@ -182,7 +189,10 @@
 					<!-- Special Product #1 Ends -->
 					<!-- Special Product #2 Starts -->
 					<li class="clearfix">
-						<img src="dist/images/special-product/spl-product-img2.jpg" alt="Special product" class="img-responsive" />
+						<a href="#/categories/CARTES_GEOGRAPHIQUES/">
+							<img src="dist/images/special-product/spl-product-img2.jpg" alt="Special product" class="img-responsive" />
+						</a>
+
 						<!--<h5><a href="#">Olympus Digital Camera</a></h5>-->
 						<!--<div class="price">
 							<span class="price-new">$599.50</span>
@@ -191,7 +201,10 @@
 					<!-- Special Product #2 Ends -->
 					<!-- Special Product #3 Starts -->
 					<li class="clearfix">
-						<img src="dist/images/special-product/spl-product-img3.jpg" alt="Special product" class="img-responsive" />
+						<a href="#/categories/CARTES_GEOGRAPHIQUES/">
+							<img src="dist/images/special-product/spl-product-img3.jpg" alt="Special product" class="img-responsive" />
+						</a>
+
 						<!--<h5><a href="#">Olympus Digital Camera</a></h5>-->
 						<!--<div class="price">
 							<span class="price-new">$199.50</span>
