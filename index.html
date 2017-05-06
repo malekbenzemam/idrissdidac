@@ -152,11 +152,12 @@
 
 					<ul class="aboutul">
 						<li class="aboutli" ng-repeat="category in vm.categories ">
-							<a ng-if="!category.children.length"  ui-sref="categories({ id : '{{category.id}}', categorie: '{{category.urlname}}', subCategorie:'' })" class="list-group-item">
+							<a ng-if="!category.children.length" ui-sref="categories({ id : '{{category.id}}', categorie: '{{category.urlname}}', subCategorie:'' })"
+							 class="list-group-item">
 								<i class="fa fa-chevron-right"></i> {{category.name}} {{category.children.length? "("+category.children.length+")":
 								""}}
 							</a>
-							<a  ng-if="category.children.length" class="list-group-item">
+							<a ng-if="category.children.length" class="list-group-item">
 								<i class="fa fa-chevron-right"></i> {{category.name}} {{category.children.length? "("+category.children.length+")":
 								""}}
 							</a>
