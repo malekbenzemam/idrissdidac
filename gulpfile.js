@@ -42,7 +42,7 @@ const paths = {
         dest: "./dist/views/"
     },
     products: {
-        src: ["../products/**/*.jpg"],
+        src: ["../products/00-compress/**/*.jpg"],
         dest: "./dist/images/products/"
     }
 
