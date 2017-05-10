@@ -1,6 +1,6 @@
 var dirToJson = require('./lib/dirToJson.js');
 
-var file = 'dist/data.json';
+var file = 'dist/api/data.json';
 // Source directory
 var srcDirectory = "dist/images/products/categories";
 
@@ -12,7 +12,7 @@ var srcDirectory = "dist/images/products/categories";
 // }
 
 
-dirToJson.dirToJson(srcDirectory);
+dirToJson.dirToJson(srcDirectory,file);
 
 // dirToJson.readFile(file, function (err, obj) {
 //     obj.children
