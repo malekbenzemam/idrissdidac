@@ -14,7 +14,7 @@
             product: {},
             gotoPage: function (index) {
                 this.page = index;
-                console.log(" all : ", this.all);
+                // console.log(" all : ", this.all);
                 this.product = this.all[this.page];
                 this.product.path = this.product.path.replace('/categories/', '/projects/')
             },
@@ -54,7 +54,7 @@
 
                 self.products.all = products.children;
                 self.products.gotoPage(index - 1);
-                console.log('Product found ', products);
+                // console.log('Product found ', products);
 
             })
         }

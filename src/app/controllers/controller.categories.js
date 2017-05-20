@@ -18,12 +18,12 @@
                 to = to < this.total() ? to : this.total();
                 this.products = this.all.slice(from, to);
                 this.page = thePage;
-                console.log("Products", self.products);
+                // console.log("Products", self.products);
             },
             next: function () {
 
                 var next = (this.page + 1) % (this.totalPage() + 1);
-                console.log("next : ", next)
+                // console.log("next : ", next)
                 next = next || 1;
                 this.gotoPage(next);
             },
@@ -45,7 +45,7 @@
 
         self.categorie = $stateParams.categorie;
         self.subCategorie = $stateParams.subCategorie;
-        console.log("Category selected ", $stateParams)
+        // console.log("Category selected ", $stateParams)
         self.contents = config.DIST;
 
         init();
@@ -56,7 +56,7 @@
                 function (data) {
                     self.categorieTitle = data.categorie;
                     self.subCategorieTitle = data.subCategorie;
-                    console.log("Products from getproduct ", data);
+                    // console.log("Products from getproduct ", data);
                     self.products.all = data.children;
                     self.products.gotoPage(1);
                 });

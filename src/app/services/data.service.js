@@ -67,7 +67,7 @@
             if (subCategoryName == 0) {
                 var subCategoryName = "";
             }
-            console.log("sub ", subCategoryName);
+            // console.log("sub ", subCategoryName);
             getData()
                 .then(function (data) {
                     angular.forEach(data.children, function (category) {
@@ -76,7 +76,7 @@
                                 category.categorie = category.name;
                                 return fn(category);
                             }
-                            console.log("Subcategorie searche ");
+                            // console.log("Subcategorie searche ");
                             angular.forEach(category.children, function (subCategory) {
                                 if (subCategory.urlname === subCategoryName) {
                                     subCategory.categorie = category.name;
