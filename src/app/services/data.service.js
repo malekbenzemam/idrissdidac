@@ -50,13 +50,13 @@
             var data =  storage.getData();
 
             if (data) {
-                console.log('Data from cache');
+                console.log('From cache');
                 return data;
             }
 
             return $http.get(config.DATA)
                 .then(function (response) {
-                    console.log("Data from server  ");
+                    console.log("From server  ");
                     storage.saveData(response.data);
                     return response.data;
                 });
@@ -99,9 +99,7 @@
                     return prod.urlname == productId;
                 })[0];
 
-                console.log('prod : ', prod.path);
                 prod.path = prod.path.replace('/categories/', '/projects/')
-                console.log('prod : ', prod.path);
                 fn(prods, prod.id);
 
             });
@@ -110,7 +108,6 @@
             return getAllData()
                 .then(function (response) {
                     data = dirTree(response);
-                    // console.log(data.children);
                     return data.children;
                 });
         }
