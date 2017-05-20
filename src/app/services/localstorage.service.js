@@ -12,10 +12,10 @@
             getData: getData,
             saveData: saveData
         }
-
+        var storageName = "idrissdatav1";
         function getData() {
             var deferred = $q.defer();
-            var data = $localStorage["idrissdatav1"];
+            var data = $localStorage[storageName];
             if(!data){
                 return null ;
             } 
@@ -26,7 +26,7 @@
         }
 
         function saveData(data) {
-            $localStorage["idrissdata"] = data;
+            $localStorage[storageName] = data;
         }
 
 
