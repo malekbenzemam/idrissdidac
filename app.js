@@ -1,6 +1,6 @@
 var dirToJson = require('./lib/dirToJson.js');
 
-var file = 'dist/api/data.json';
+var file = 'dist/api/datav1.json';
 // Source directory
 var srcDirectory = "dist/images/products/categories";
 
