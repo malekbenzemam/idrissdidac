@@ -1,9 +1,8 @@
 var dirToJson = require('./lib/dirToJson.js');
 
-var file = 'dist/api/datav1.json';
+var file = 'dist/api/data.json';
 // Source directory
 var srcDirectory = "dist/images/products/categories";
-
 
 // if (module.parent == undefined) {
 //     // node dirTree.js ~/foo/bar

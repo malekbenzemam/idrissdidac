@@ -11,7 +11,7 @@
                 projects: "/dist/images/products/projects",
             },
             
-            DATA: "/dist/api/datav1.json",
+            DATA: "/dist/api/data.json",
             DOCUMENTS: "/dist/api/documents.json",
             SLIDES: "/dist/api/slides.json"
         });
