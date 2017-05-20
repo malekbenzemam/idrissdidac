@@ -17,7 +17,7 @@
             var deferred = $q.defer();
             var data = $localStorage["idrissdata"];
             if(!data){
-                return null;
+                return null ;
             } 
 
             deferred.resolve(data);

@@ -47,7 +47,7 @@
             return getAllData();
         }
         function getAllData() {
-            var data = storage.getData();
+            var data =  storage.getData();
 
             if (data) {
                 console.log('Data from cache');
