@@ -15,7 +15,7 @@
 
         function getData() {
             var deferred = $q.defer();
-            var data = $localStorage["idrissdata"];
+            var data = $localStorage["idrissdatav1"];
             if(!data){
                 return null ;
             } 
