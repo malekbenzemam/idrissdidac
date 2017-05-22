@@ -17,9 +17,17 @@
 
                 <img style="padding: 5%; width:100%" ng-src="{{ vm.products.product.path }}" alt="banners" class="img-responsive">
             </div>
-            </ul>
         </div>
 
+        <hr>
+        <div class="text-center">
+            <h2>{{vm.categorieTitle}} </h2>
+            <h3>{{vm.subCategorieTitle}} </h3>
+
+            <button class="btn btn-success" ng-click="vm.products.prior()">Précedent</button>
+            <h3 style="display: inline"> {{vm.products.current()}} / {{vm.products.total()}}</h3>
+            <button class="btn btn-success" ng-click="vm.products.next()">Suivant</button>
+        </div>
     </div>
 
     <!-- /.container -->
