@@ -8,8 +8,6 @@
     function dataservice($http, storage, config) {
 
         return {
-            getSlides: getSlides,
-            getDocuments: getDocuments,
             getSideBar: getSideBar,
             getData: getData,
             getProducts: getProducts,
@@ -104,6 +102,7 @@
 
             });
         }
+
         function getSideBar() {
             return getAllData()
                 .then(function (response) {
@@ -112,24 +111,6 @@
                 });
         }
 
-
-        function getSlides() {
-            return $http.get(config.SLIDES)
-                .then(function (response) {
-                    return response.data.slides;
-                });
-        };
-
-        function getDocuments() {
-            return $http.get(config.DOCUMENTS)
-                .then(function (response) {
-                    angular.forEach(response.data.docs, function (doc) {
-                        doc.filename = getFileName(doc.path);
-                    });
-                    return response.data;
-                });
-
-        };
 
         function getFileName(fullPath) {
             var filename = fullPath.replace(/^.*[\\\/]/, '');
